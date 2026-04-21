@@ -17,8 +17,8 @@ export function ProgressMap({ activityStage }: Props) {
 
   return (
     <section className="mt-7 rounded-[1.4rem] border border-[#d9cdb9] bg-[linear-gradient(180deg,#fcf8f1_0%,#f7f0e3_100%)] px-4 py-5 shadow-[0_14px_36px_rgba(95,71,35,0.05)] sm:px-5 sm:py-6 md:mt-10 md:rounded-[1.6rem] md:px-8 md:py-8">
-      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
+      <div className="flex flex-col items-center gap-4 text-center md:flex-row md:items-end md:justify-between md:text-left">
+        <div className="max-w-2xl">
           <p className="text-[10px] uppercase tracking-[0.22em] text-[#7b7062] md:text-[11px]">
             Carte de position
           </p>
@@ -74,8 +74,8 @@ export function ProgressMap({ activityStage }: Props) {
           </div>
         </div>
 
-        <div className="mt-5 rounded-[1rem] border border-[#dfd2be] bg-[#fdf9f1] px-4 py-3 md:mt-7 md:rounded-[1.2rem] md:px-6 md:py-4">
-          <p className="text-[13px] leading-[1.7] text-[#4a4237] md:text-[15px] md:leading-[1.8]">
+        <div className="mt-5 rounded-[1rem] border border-[#dfd2be] bg-[#fdf9f1] px-4 py-3 text-center md:mt-7 md:rounded-[1.2rem] md:px-6 md:py-4">
+          <p className="mx-auto max-w-3xl text-[13px] leading-[1.7] text-[#4a4237] md:text-[15px] md:leading-[1.8]">
             Cette carte situe votre activité comme un niveau de structuration
             actuellement perceptible à partir de votre situation, de vos tensions
             et de votre degré de clarification.
