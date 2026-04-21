@@ -10,7 +10,8 @@ function parseData(data: string | undefined): DiagnosticResult {
       whatAlreadyExists: "Non disponible.",
       missingStructure: "Non disponible.",
       nextStep: "Non disponible.",
-      ctaBridge: "Vous pouvez relancer le diagnostic pour accéder à une restitution complète."
+      ctaBridge:
+        "Vous pouvez relancer le diagnostic pour accéder à une restitution complète.",
     };
   }
 
@@ -24,13 +25,13 @@ function parseData(data: string | undefined): DiagnosticResult {
       whatAlreadyExists: "Non disponible.",
       missingStructure: "Non disponible.",
       nextStep: "Non disponible.",
-      ctaBridge: "Revenez au diagnostic pour regénérer la lecture."
+      ctaBridge: "Revenez au diagnostic pour régénérer la lecture.",
     };
   }
 }
 
 export default async function ResultPage({
-  searchParams
+  searchParams,
 }: {
   searchParams: Promise<{ data?: string }>;
 }) {
