@@ -16,34 +16,34 @@ export function ProgressMap({ activityStage }: Props) {
   const stage = useMemo(() => resolveStage(activityStage), [activityStage]);
 
   return (
-    <section className="mt-8 rounded-[1.6rem] border border-[#d9cdb9] bg-[linear-gradient(180deg,#fcf8f1_0%,#f7f0e3_100%)] px-6 py-6 shadow-[0_16px_40px_rgba(95,71,35,0.06)] md:mt-10 md:px-8 md:py-8">
-      <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+    <section className="mt-7 rounded-[1.4rem] border border-[#d9cdb9] bg-[linear-gradient(180deg,#fcf8f1_0%,#f7f0e3_100%)] px-4 py-5 shadow-[0_14px_36px_rgba(95,71,35,0.05)] sm:px-5 sm:py-6 md:mt-10 md:rounded-[1.6rem] md:px-8 md:py-8">
+      <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#7b7062]">
+          <p className="text-[10px] uppercase tracking-[0.22em] text-[#7b7062] md:text-[11px]">
             Carte de position
           </p>
-          <h2 className="mt-3 font-serif text-[1.7rem] leading-[1.08] tracking-[-0.02em] text-ink md:text-[2.2rem]">
+          <h2 className="mt-2 font-serif text-[1.35rem] leading-[1.08] tracking-[-0.02em] text-ink sm:text-[1.6rem] md:mt-3 md:text-[2.2rem]">
             Position actuelle dans la dynamique de structuration
           </h2>
         </div>
 
-        <div className="rounded-full border border-[#d8cab3] bg-[#fbf7ef] px-4 py-2 text-sm text-[#6a6053]">
+        <div className="w-fit rounded-full border border-[#d8cab3] bg-[#fbf7ef] px-3 py-1.5 text-[11px] text-[#6a6053] md:px-4 md:py-2 md:text-sm">
           Lecture estimée : {stage.label}
         </div>
       </div>
 
-      <div className="mt-8">
-        <div className="relative px-2 md:px-4">
-          <div className="absolute left-[2%] right-[2%] top-[28px] h-[2px] bg-[#cfbea1]" />
+      <div className="mt-7">
+        <div className="relative px-1 sm:px-2 md:px-4">
+          <div className="absolute left-[2%] right-[2%] top-[22px] h-[2px] bg-[#cfbea1] md:top-[28px]" />
 
           <div
-            className="absolute top-[18px] h-[22px] w-[22px] -translate-x-1/2 rounded-full border border-[#ab8750] bg-[#f7efdf] shadow-[0_0_0_7px_rgba(171,135,80,0.11),0_10px_20px_rgba(120,90,43,0.15)]"
+            className="absolute top-[12px] h-[20px] w-[20px] -translate-x-1/2 rounded-full border border-[#ab8750] bg-[#f7efdf] shadow-[0_0_0_6px_rgba(171,135,80,0.12),0_8px_18px_rgba(120,90,43,0.14)] md:top-[16px] md:h-[26px] md:w-[26px] md:shadow-[0_0_0_7px_rgba(171,135,80,0.12),0_10px_20px_rgba(120,90,43,0.15)]"
             style={{ left: `${stage.x}%` }}
           >
-            <div className="absolute inset-[5px] rounded-full bg-[#ab8750]" />
+            <div className="absolute inset-[4px] rounded-full bg-[#ab8750] md:inset-[5px]" />
           </div>
 
-          <div className="relative grid grid-cols-5 gap-2 pt-12">
+          <div className="relative grid grid-cols-5 gap-1 pt-9 md:gap-2 md:pt-12">
             {STAGES.map((item) => {
               const active = item.label === stage.label;
               const passed = item.x < stage.x;
@@ -52,9 +52,9 @@ export function ProgressMap({ activityStage }: Props) {
                 <div key={item.label} className="text-center">
                   <div
                     className={[
-                      "mx-auto h-2.5 w-2.5 rounded-full border transition-all duration-300",
+                      "mx-auto h-2 w-2 rounded-full border transition-all duration-300 md:h-2.5 md:w-2.5",
                       active
-                        ? "border-[#ab8750] bg-[#ab8750] shadow-[0_0_0_5px_rgba(171,135,80,0.12)]"
+                        ? "border-[#ab8750] bg-[#ab8750] shadow-[0_0_0_4px_rgba(171,135,80,0.12)] md:shadow-[0_0_0_5px_rgba(171,135,80,0.12)]"
                         : passed
                         ? "border-[#c5ad85] bg-[#dcc7a6]"
                         : "border-[#d6cab8] bg-[#f7f2e8]",
@@ -62,10 +62,8 @@ export function ProgressMap({ activityStage }: Props) {
                   />
                   <p
                     className={[
-                      "mt-4 text-[11px] leading-relaxed md:text-xs",
-                      active
-                        ? "font-medium text-[#5a4b37]"
-                        : "text-[#7f7365]",
+                      "mt-3 text-[9px] leading-relaxed sm:text-[10px] md:mt-4 md:text-xs",
+                      active ? "font-medium text-[#5a4b37]" : "text-[#7f7365]",
                     ].join(" ")}
                   >
                     {item.label}
@@ -76,11 +74,11 @@ export function ProgressMap({ activityStage }: Props) {
           </div>
         </div>
 
-        <div className="mt-7 rounded-[1.2rem] border border-[#dfd2be] bg-[#fdf9f1] px-5 py-4 md:px-6">
-          <p className="text-sm leading-[1.8] text-[#4a4237] md:text-[15px]">
-            Cette carte situe votre activité non comme un score, mais comme un
-            niveau de structuration actuellement perceptible à partir de votre
-            situation, de vos tensions et de votre degré de clarification.
+        <div className="mt-5 rounded-[1rem] border border-[#dfd2be] bg-[#fdf9f1] px-4 py-3 md:mt-7 md:rounded-[1.2rem] md:px-6 md:py-4">
+          <p className="text-[13px] leading-[1.7] text-[#4a4237] md:text-[15px] md:leading-[1.8]">
+            Cette carte situe votre activité comme un niveau de structuration
+            actuellement perceptible à partir de votre situation, de vos tensions
+            et de votre degré de clarification.
           </p>
         </div>
       </div>
