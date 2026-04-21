@@ -169,12 +169,15 @@ export function buildDiagnostic(payload: DiagnosticPayload): DiagnosticResult {
     "Ce que vous cherchez à construire ne repose pas uniquement sur votre métier, mais sur une structure complète. Une approche plus cadrée permet d'accélérer sans vous disperser.";
 
   return {
-    summary,
-    activityStage,
-    mainBlock: mainBlockMap[payload.answers.blocker] ?? mainBlockMap["Prioriser sans me disperser."],
-    whatAlreadyExists,
-    missingStructure,
-    nextStep,
-    ctaBridge: payload.freeText ? `${ctaBridge} Votre synthèse confirme un besoin de clarté opérationnelle.` : ctaBridge
-  };
+  heroTitle: summary,
+  summary,
+  activityStage,
+  mainBlock: mainBlockMap[payload.answers.blocker] ?? mainBlockMap["Prioriser sans me disperser."],
+  whatAlreadyExists,
+  missingStructure,
+  nextStep,
+  ctaBridge: payload.freeText
+    ? `${ctaBridge} Votre synthèse confirme un besoin de clarté opérationnelle.`
+    : ctaBridge
+};
 }
