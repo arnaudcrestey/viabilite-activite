@@ -10,6 +10,7 @@ export type DiagnosticPayload = {
 };
 
 export type DiagnosticResult = {
+  heroTitle: string;
   summary: string;
   activityStage: string;
   mainBlock: string;
