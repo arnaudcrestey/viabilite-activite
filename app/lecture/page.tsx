@@ -4,6 +4,7 @@ import type { DiagnosticResult } from "@/lib/diagnostic";
 function parseData(data: string | undefined): DiagnosticResult {
   if (!data) {
     return {
+      heroTitle: "Aucune lecture disponible pour le moment.",
       summary: "Aucune lecture disponible pour le moment.",
       activityStage: "Démarrez le diagnostic pour obtenir une lecture précise.",
       mainBlock: "Non disponible.",
@@ -19,6 +20,7 @@ function parseData(data: string | undefined): DiagnosticResult {
     return JSON.parse(decodeURIComponent(data)) as DiagnosticResult;
   } catch {
     return {
+      heroTitle: "Les données de restitution sont incomplètes.",
       summary: "Les données de restitution sont incomplètes.",
       activityStage: "Relancez le diagnostic pour une lecture complète.",
       mainBlock: "Non disponible.",
