@@ -26,7 +26,7 @@ export function ResultView({ result }: Props) {
       <section className="panel overflow-hidden px-5 py-6 shadow-[0_24px_70px_rgba(81,61,31,0.05)] sm:px-7 sm:py-8 md:px-12 md:py-12">
         <div className="flex flex-col gap-4 md:gap-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-            <div>
+            <div className="text-center md:text-left">
               <p className="text-[10px] uppercase tracking-[0.24em] text-[#7a6f62] md:text-[11px]">
                 Lecture de situation
               </p>
@@ -35,18 +35,18 @@ export function ResultView({ result }: Props) {
               </p>
             </div>
 
-            <div className="w-fit rounded-full border border-[#ddd1bd] bg-[#fbf7ef] px-3 py-1.5 text-[11px] text-[#685f53] md:px-4 md:py-2 md:text-sm">
+            <div className="mx-auto w-fit rounded-full border border-[#ddd1bd] bg-[#fbf7ef] px-3 py-1.5 text-[11px] text-[#685f53] md:mx-0 md:px-4 md:py-2 md:text-sm">
               Activité • positionnement • structure
             </div>
           </div>
 
-          <div className="max-w-[18rem] sm:max-w-[26rem] md:max-w-[40rem] lg:max-w-[46rem]">
-            <h1 className="font-serif text-[2.05rem] leading-[0.98] tracking-[-0.03em] text-ink sm:text-[2.7rem] md:text-[3.6rem] lg:text-[4.25rem]">
+          <div className="mx-auto max-w-[19rem] text-center sm:max-w-[28rem] md:mx-0 md:max-w-[42rem] md:text-left lg:max-w-[48rem]">
+            <h1 className="font-serif text-[2.25rem] leading-[0.98] tracking-[-0.03em] text-ink sm:text-[2.9rem] md:text-[3.8rem] lg:text-[4.35rem]">
               {result.heroTitle}
             </h1>
           </div>
 
-          <div className="max-w-3xl">
+          <div className="mx-auto max-w-3xl text-center md:mx-0 md:text-left">
             <p className="text-[0.98rem] leading-[1.75] text-[#443c31] md:text-[1.12rem] md:leading-[1.85]">
               {result.summary}
             </p>
@@ -86,37 +86,35 @@ export function ResultView({ result }: Props) {
       </section>
 
       <section className="panel-soft mt-8 px-5 py-6 sm:px-7 sm:py-7 md:mt-12 md:px-10 md:py-10">
-        <div className="max-w-4xl">
+        <div className="mx-auto max-w-4xl text-center">
           <p className="text-[10px] uppercase tracking-[0.22em] text-[#7a6f62] md:text-[11px]">
             Suite possible
           </p>
 
-          <h2 className="mt-3 max-w-3xl font-serif text-[1.9rem] leading-[1.04] tracking-[-0.025em] text-ink sm:text-[2.25rem] md:mt-4 md:text-[3rem]">
+          <h2 className="mt-3 font-serif text-[1.9rem] leading-[1.04] tracking-[-0.025em] text-ink sm:text-[2.25rem] md:mt-4 md:text-[3rem]">
             Quand une base existe, le vrai enjeu n’est plus de repartir de zéro.
           </h2>
 
-          <p className="mt-4 max-w-3xl text-[0.98rem] leading-[1.75] text-[#443c31] md:mt-5 md:text-[1.08rem] md:leading-[1.85]">
+          <p className="mx-auto mt-4 max-w-3xl text-[0.98rem] leading-[1.75] text-[#443c31] md:mt-5 md:text-[1.08rem] md:leading-[1.85]">
             {result.missingStructure}
           </p>
 
-          <p className="mt-4 max-w-3xl text-[0.98rem] leading-[1.75] text-[#443c31] md:mt-5 md:text-[1.08rem] md:leading-[1.85]">
+          <p className="mx-auto mt-4 max-w-3xl text-[0.98rem] leading-[1.75] text-[#443c31] md:mt-5 md:text-[1.08rem] md:leading-[1.85]">
             {result.ctaBridge}
           </p>
         </div>
 
-        <div className="mt-7 flex flex-col gap-5 sm:gap-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-            <a
-              className="btn-primary"
-              href="https://arnaudcrestey.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Faire un point sur votre situation
-            </a>
+        <div className="mt-8 flex flex-col items-center justify-center gap-5 md:mt-10 md:gap-6">
+          <a
+            className="btn-primary"
+            href="https://arnaudcrestey.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Faire un point sur votre situation
+          </a>
 
-            <BrandSignature />
-          </div>
+          <BrandSignature />
         </div>
       </section>
 
@@ -181,7 +179,7 @@ function InsightCard({
   return (
     <article
       className={[
-        "panel-soft h-full px-5 py-5 sm:px-6 sm:py-6 md:px-7 md:py-7",
+        "panel-soft h-full px-5 py-5 text-center sm:px-6 sm:py-6 md:px-7 md:py-7 md:text-left",
         emphasis
           ? "border-[#ccb38a] bg-[linear-gradient(180deg,#fffaf1_0%,#f8f0e2_100%)] shadow-[0_18px_42px_rgba(112,82,38,0.06)]"
           : "",
@@ -208,18 +206,18 @@ function BrandSignature() {
       href="https://arnaudcrestey.com"
       target="_blank"
       rel="noreferrer"
-      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.25rem] border border-[#ddd1bd] bg-[#fbf7ef] px-5 py-4 text-center transition hover:border-[#c9b28c] hover:bg-[#fcf8f1]"
       aria-label="Découvrir arnaudcrestey.com"
+      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.3rem] border border-[#ddd1bd] bg-[#fbf7ef] px-6 py-5 text-center transition hover:border-[#c9b28c] hover:bg-[#fcf8f1]"
     >
-      <span className="font-serif text-[2.7rem] leading-none tracking-[-0.05em] text-ink sm:text-[3.2rem]">
+      <span className="font-serif text-[3rem] leading-none tracking-[-0.06em] text-ink sm:text-[3.5rem] md:text-[3.9rem]">
         AC
       </span>
 
-      <span className="mt-2 font-serif text-[1rem] leading-none text-ink sm:text-[1.15rem]">
+      <span className="-mt-1 font-serif text-[1.05rem] leading-none text-ink sm:text-[1.18rem] md:text-[1.24rem]">
         arnaudcrestey.com
       </span>
 
-      <span className="mt-3 h-px w-14 bg-[#d8cab3] transition group-hover:w-16" />
+      <span className="mt-4 h-px w-16 bg-[#d8cab3] transition-all duration-300 group-hover:w-20" />
     </a>
   );
 }
