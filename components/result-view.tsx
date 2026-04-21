@@ -40,8 +40,8 @@ export function ResultView({ result }: Props) {
             </div>
           </div>
 
-          <div className="max-w-5xl">
-            <h1 className="font-serif text-[2.2rem] leading-[0.98] tracking-[-0.03em] text-ink sm:text-[2.7rem] md:text-[4.9rem]">
+          <div className="max-w-[18rem] sm:max-w-[26rem] md:max-w-[40rem] lg:max-w-[46rem]">
+            <h1 className="font-serif text-[2.05rem] leading-[0.98] tracking-[-0.03em] text-ink sm:text-[2.7rem] md:text-[3.6rem] lg:text-[4.25rem]">
               {result.heroTitle}
             </h1>
           </div>
@@ -104,24 +104,19 @@ export function ResultView({ result }: Props) {
           </p>
         </div>
 
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <a
-            className="btn-primary"
-            href="https://arnaudcrestey.com"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Faire un point sur votre situation
-          </a>
+        <div className="mt-7 flex flex-col gap-5 sm:gap-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <a
+              className="btn-primary"
+              href="https://arnaudcrestey.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Faire un point sur votre situation
+            </a>
 
-          <a
-            href="https://arnaudcrestey.com"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-[#675d51] underline-offset-4 hover:underline"
-          >
-            arnaudcrestey.com
-          </a>
+            <BrandSignature />
+          </div>
         </div>
       </section>
 
@@ -204,5 +199,27 @@ function InsightCard({
         {content}
       </p>
     </article>
+  );
+}
+
+function BrandSignature() {
+  return (
+    <a
+      href="https://arnaudcrestey.com"
+      target="_blank"
+      rel="noreferrer"
+      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.25rem] border border-[#ddd1bd] bg-[#fbf7ef] px-5 py-4 text-center transition hover:border-[#c9b28c] hover:bg-[#fcf8f1]"
+      aria-label="Découvrir arnaudcrestey.com"
+    >
+      <span className="font-serif text-[2.7rem] leading-none tracking-[-0.05em] text-ink sm:text-[3.2rem]">
+        AC
+      </span>
+
+      <span className="mt-2 font-serif text-[1rem] leading-none text-ink sm:text-[1.15rem]">
+        arnaudcrestey.com
+      </span>
+
+      <span className="mt-3 h-px w-14 bg-[#d8cab3] transition group-hover:w-16" />
+    </a>
   );
 }
