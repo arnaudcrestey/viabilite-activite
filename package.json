@@ -11,8 +11,8 @@
   "dependencies": {
     "next": "latest",
     "react": "19.0.0",
-    "react-dom": "19.0.0"
-    "openai": "^4.0.0"
+    "react-dom": "19.0.0",
+    "openai": "^4.104.0"
   },
   "devDependencies": {
     "@types/node": "^22.15.3",
