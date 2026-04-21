@@ -1,18 +1,80 @@
 import { NextResponse } from "next/server";
-import { buildDiagnostic, type DiagnosticPayload } from "@/lib/diagnostic";
+import OpenAI from "openai";
 
-export async function POST(request: Request) {
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY!,
+});
+
+export async function POST(req: Request) {
   try {
-    const payload = (await request.json()) as DiagnosticPayload;
+    const body = await req.json();
+    const { answers, freeText } = body;
 
-    if (!payload?.answers || typeof payload.freeText !== "string") {
-      return NextResponse.json({ error: "Format invalide" }, { status: 400 });
+    const userInput = JSON.stringify({ answers, freeText });
+
+    const prompt = `
+Tu es un expert en structuration d’activité professionnelle.
+
+Ta mission :
+Analyser la situation d’une personne (coach, thérapeute, indépendante…) et produire une lecture claire, structurée et crédible.
+
+IMPORTANT :
+- Ton ton doit être sobre, professionnel, humain
+- Aucune flatterie
+- Aucune exagération
+- Pas de langage marketing
+- Pas de jargon startup
+- Tu parles comme un consultant expérimenté
+
+OBJECTIF :
+Produire une lecture stratégique structurée.
+
+FORMAT DE SORTIE (JSON STRICT) :
+
+{
+  "summary": "",
+  "activityStage": "",
+  "mainBlock": "",
+  "whatAlreadyExists": "",
+  "missingStructure": "",
+  "nextStep": "",
+  "ctaBridge": ""
+}
+
+RÈGLES :
+
+- summary : lecture globale (2-3 phrases max)
+- activityStage : position actuelle claire
+- mainBlock : principal frein réel
+- whatAlreadyExists : base solide existante
+- missingStructure : ce qui manque concrètement
+- nextStep : action logique suivante
+- ctaBridge : ouverture naturelle vers accompagnement (sans vendre)
+
+CONTEXTE UTILISATEUR :
+${userInput}
+`;
+
+    const response = await client.responses.create({
+      model: "gpt-4.1-mini",
+      input: prompt,
+      temperature: 0.4,
+    });
+
+    const text = response.output_text;
+
+    let parsed;
+
+    try {
+      parsed = JSON.parse(text);
+    } catch {
+      console.error("Parsing error:", text);
+      return NextResponse.json({ error: "Invalid AI response" }, { status: 500 });
     }
 
-    const result = buildDiagnostic(payload);
-
-    return NextResponse.json(result);
-  } catch {
-    return NextResponse.json({ error: "Erreur lors du diagnostic." }, { status: 500 });
+    return NextResponse.json(parsed);
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
