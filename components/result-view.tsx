@@ -107,7 +107,7 @@ export function ResultView({ result }: Props) {
         <div className="mt-8 flex flex-col items-center justify-center gap-5 md:mt-10 md:gap-6">
           <a
             className="btn-primary"
-            href="https://arnaudcrestey.com"
+            href="https://systia.fr"
             target="_blank"
             rel="noreferrer"
           >
