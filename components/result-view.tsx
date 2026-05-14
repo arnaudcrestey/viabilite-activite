@@ -159,7 +159,7 @@ export function ResultView({ result }: Props) {
       </section>
 
       <p className="mt-8 text-center text-[10px] uppercase tracking-[0.18em] text-[#857a6d] md:mt-12 md:text-[11px]">
-        Lecture de viabilité • arnaudcrestey.com
+        Lecture de viabilité • systia.fr
       </p>
     </main>
   );
@@ -203,21 +203,25 @@ function InsightCard({
 function BrandSignature() {
   return (
     <a
-      href="https://arnaudcrestey.com"
+      href="https://systia.fr"
       target="_blank"
       rel="noreferrer"
-      aria-label="Découvrir arnaudcrestey.com"
-      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.3rem] border border-[#ddd1bd] bg-[#fbf7ef] px-6 py-5 text-center transition hover:border-[#c9b28c] hover:bg-[#fcf8f1]"
+      aria-label="Découvrir SYSTIA"
+      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.5rem] border border-[#d7dce8] bg-[#f7f8fc] px-7 py-6 text-center transition-all duration-300 hover:border-[#b7c2de] hover:bg-white"
     >
-      <span className="font-serif text-[3rem] leading-none tracking-[-0.06em] text-ink sm:text-[3.5rem] md:text-[3.9rem]">
-        AC
+      <span className="mb-1 text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#6f7ea8] sm:text-[0.68rem]">
+        Structuration d’activités
       </span>
 
-      <span className="-mt-1 font-serif text-[1.05rem] leading-none text-ink sm:text-[1.18rem] md:text-[1.24rem]">
-        arnaudcrestey.com
+      <span className="font-serif text-[3.6rem] leading-none tracking-[-0.08em] text-[#14295c] sm:text-[4.4rem] md:text-[5.2rem]">
+        SYSTIA
       </span>
 
-      <span className="mt-4 h-px w-16 bg-[#d8cab3] transition-all duration-300 group-hover:w-20" />
+      <span className="mt-3 h-px w-20 bg-[#d7dce8] transition-all duration-300 group-hover:w-24" />
+
+      <span className="mt-5 font-serif text-[1.2rem] leading-tight text-[#24345f] sm:text-[1.45rem]">
+        Conception de systèmes d’activité
+      </span>
     </a>
   );
 }
