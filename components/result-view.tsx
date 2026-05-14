@@ -207,19 +207,19 @@ function BrandSignature() {
       target="_blank"
       rel="noreferrer"
       aria-label="Découvrir SYSTIA"
-      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.5rem] border border-[#d7dce8] bg-[#f7f8fc] px-7 py-6 text-center transition-all duration-300 hover:border-[#b7c2de] hover:bg-white"
+      className="group inline-flex w-fit flex-col items-center justify-center rounded-[1.7rem] border border-[#d8ddeb] bg-[#f5f6fb] px-6 py-5 text-center shadow-[0_8px_30px_rgba(20,41,92,0.04)] transition-all duration-300 hover:-translate-y-[1px] hover:border-[#bcc7e2] hover:bg-white sm:px-8 sm:py-6"
     >
-      <span className="mb-1 text-[0.62rem] font-medium uppercase tracking-[0.45em] text-[#6f7ea8] sm:text-[0.68rem]">
+      <span className="mb-2 text-[0.58rem] font-medium uppercase tracking-[0.42em] text-[#7080a8] sm:text-[0.64rem]">
         Structuration d’activités
       </span>
 
-      <span className="font-serif text-[3.6rem] leading-none tracking-[-0.08em] text-[#14295c] sm:text-[4.4rem] md:text-[5.2rem]">
+      <span className="font-serif text-[3.2rem] leading-[0.9] tracking-[-0.08em] text-[#14295c] sm:text-[4.1rem] md:text-[4.7rem]">
         SYSTIA
       </span>
 
-      <span className="mt-3 h-px w-20 bg-[#d7dce8] transition-all duration-300 group-hover:w-24" />
+      <span className="mt-4 h-px w-14 bg-[#d6dced] transition-all duration-300 group-hover:w-20 sm:w-16" />
 
-      <span className="mt-5 font-serif text-[1.2rem] leading-tight text-[#24345f] sm:text-[1.45rem]">
+      <span className="mt-4 max-w-[240px] font-serif text-[1rem] leading-[1.3] text-[#23345d] sm:max-w-[320px] sm:text-[1.22rem]">
         Conception de systèmes d’activité
       </span>
     </a>
